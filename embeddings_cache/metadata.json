@@ -1,0 +1,11 @@
+{
+  "dataset_file": "movies_with_COMPLETE_parental_guide_FIXED.csv",
+  "total_movies": 93647,
+  "embeddings_shape": [
+    93647,
+    384
+  ],
+  "model_name": "all-MiniLM-L6-v2",
+  "creation_timestamp": "20250629_180831",
+  "embedding_dimension": 384
+}

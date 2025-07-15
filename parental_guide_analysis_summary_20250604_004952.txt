@@ -1,0 +1,8 @@
+Parental Guide Data Analysis Summary
+Generated: 2025-06-04 00:49:52.966808
+
+Total movies: 93,647
+Movies with parental guide data: 24,702
+Coverage percentage: 26.4%
+Movies processed: 87,927
+Success rate: 28.1%

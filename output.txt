@@ -1,0 +1,169 @@
+Comprehensive Parental Guide Data Analysis
+This script analyzes your complete movie dataset with parental guide information.
+
+🔍 COMPREHENSIVE PARENTAL GUIDE DATA ANALYSIS
+================================================================================
+✅ Loaded complete dataset: 93,647 movies
+
+📊 DATASET OVERVIEW
+----------------------------------------
+Total movies in dataset: 93,647
+Dataset columns: 27
+✅ All parental guide columns present: ['mpaa_rating', 'violence_severity', 'profanity_severity', 'sex_nudity_severity', 'alcohol_drugs_severity', 'frightening_severity', 'parental_guide_status']
+
+📈 PROCESSING STATUS ANALYSIS
+----------------------------------------
+Movies with parental guide processing: 87,927 (93.9%)
+Movies not yet processed: 5,720 (6.1%)
+
+Processing Status Breakdown:
+  no_data: 63,204 (71.9%)
+  success: 24,702 (28.1%)
+  error: 21 (0.0%)
+
+🎯 SUCCESS RATE ANALYSIS
+----------------------------------------
+Successful extractions: 24,702
+No parental guide data available: 63,204
+Processing errors: 21
+Overall success rate: 28.1%
+
+📊 SEVERITY DISTRIBUTION ANALYSIS
+----------------------------------------
+Analysis based on 24,702 successful extractions:
+
+Violence:
+  Movies with violence content: 20,395 (82.6%)
+    None: 4,307 (17.4%)
+    Mild: 7,997 (32.4%)
+    Moderate: 9,290 (37.6%)
+    Severe: 3,108 (12.6%)
+
+Profanity:
+  Movies with profanity content: 18,763 (76.0%)
+    None: 5,939 (24.0%)
+    Mild: 7,324 (29.6%)
+    Moderate: 8,889 (36.0%)
+    Severe: 2,550 (10.3%)
+
+Sex Nudity:
+  Movies with sex nudity content: 16,340 (66.1%)
+    None: 8,362 (33.9%)
+    Mild: 8,870 (35.9%)
+    Moderate: 6,321 (25.6%)
+    Severe: 1,149 (4.7%)
+
+Alcohol Drugs:
+  Movies with alcohol drugs content: 21,277 (86.1%)
+    None: 3,425 (13.9%)
+    Mild: 12,538 (50.8%)
+    Moderate: 7,666 (31.0%)
+    Severe: 1,073 (4.3%)
+
+Frightening:
+  Movies with frightening content: 20,374 (82.5%)
+    None: 4,328 (17.5%)
+    Mild: 7,815 (31.6%)
+    Moderate: 10,030 (40.6%)
+    Severe: 2,529 (10.2%)
+
+🎬 MPAA RATING ANALYSIS
+----------------------------------------
+Movies with MPAA rating data: 8,340
+MPAA Rating Distribution:
+  Rated R for language: 266 (3.2%)
+  Rated R for violence and language: 70 (0.8%)
+  Rated R for some language: 68 (0.8%)
+  Rated R for violence: 55 (0.7%)
+  Rated PG-13 for brief strong language: 53 (0.6%)
+  Rated R for language and some sexual content: 46 (0.6%)
+  Rated R for some violence: 38 (0.5%)
+  Rated R for language.: 33 (0.4%)
+  Rated R for sexual content and language: 31 (0.4%)
+  Rated R for language and some sexuality: 30 (0.4%)
+
+🎪 SAMPLE SUCCESSFUL EXTRACTIONS
+----------------------------------------
+Sample movies with parental guide content:
+
+• American Graffiti (1973.0) - 7.4/10
+  Votes: 101,861
+  Content: Violence: 2, Profanity: 3, Sex_Nudity: 2, Alcohol_Drugs: 2, Frightening: 2
+
+• Smokin' Aces (2006.0) - 6.6/10
+  Votes: 154,887
+  Content: Violence: 5, Profanity: 5, Sex_Nudity: 3, Alcohol_Drugs: 5, Frightening: 5
+  MPAA: Rated R for strong bloody violence, pervasive language, some nudity and drug use
+
+• Deus e o Diabo na Terra do Sol (1964.0) - 7.2/10
+  Votes: 5,847
+  Content: Violence: 3, Sex_Nudity: 2, Alcohol_Drugs: 2, Frightening: 5
+
+• Hennessy (1975.0) - 6.2/10
+  Votes: 915
+  Content: Violence: 3, Profanity: 2, Alcohol_Drugs: 2, Frightening: 3
+
+• Waking the Dead (2000.0) - 6.4/10
+  Votes: 7,808
+  Content: Violence: 2, Profanity: 3, Sex_Nudity: 3, Alcohol_Drugs: 2, Frightening: 2
+  MPAA: Rated R for sexuality and language
+
+• Wal-Mart: The High Cost of Low Price (2005.0) - 6.8/10
+  Votes: 4,614
+  Content: Violence: 2, Profanity: 5, Sex_Nudity: 2, Alcohol_Drugs: 3, Frightening: 5
+
+• Az ember tragédiája (2011.0) - 8.0/10
+  Votes: 1,269
+  Content: Violence: 3, Sex_Nudity: 3, Alcohol_Drugs: 2, Frightening: 3
+
+• The Conjuring: The Devil Made Me Do It (2021.0) - 6.3/10
+  Votes: 149,856
+  Content: Violence: 3, Profanity: 2, Alcohol_Drugs: 2, Frightening: 5
+  MPAA: Rated R for terror, violence and some disturbing images.
+
+• Little Men (1998.0) - 6.3/10
+  Votes: 670
+  Content: Violence: 2, Profanity: 2, Sex_Nudity: 2, Alcohol_Drugs: 2, Frightening: 3
+  MPAA: Rated PG for mild thematic elements and brief language
+
+• Mondocane (2021.0) - 6.1/10
+  Votes: 827
+  Content: Violence: 3, Profanity: 5, Sex_Nudity: 2, Alcohol_Drugs: 3, Frightening: 3
+
+📈 COVERAGE BY MOVIE POPULARITY
+----------------------------------------
+Parental guide coverage by popularity:
+  <1K votes: 64,180 movies
+    Processed: 60,060 (93.6%)
+    Successful: 5,787 (9.0%)
+  1K-10K votes: 20,455 movies
+    Processed: 19,258 (94.1%)
+    Successful: 10,587 (51.8%)
+  10K-100K votes: 6,695 movies
+    Processed: 6,381 (95.3%)
+    Successful: 6,108 (91.2%)
+  >100K votes: 2,310 movies
+    Processed: 2,221 (96.1%)
+    Successful: 2,220 (96.1%)
+
+🔒 CONTENT FILTERING CAPABILITIES
+----------------------------------------
+Movies suitable for content filtering:
+  Family-friendly (all content ≤ mild): 6,127 movies
+  High-intensity (any content ≥ strong): 6,162 movies
+  Clean (no content warnings): 292 movies
+  Moderate content (between clean and family): 18,283 movies
+
+🎉 FINAL SUMMARY
+----------------------------------------
+🎯 Your movie recommendation system now includes:
+   • 93,647 total movies
+   • 24,702 movies with detailed parental guide data
+   • 26.4% of your catalog has content filtering capability
+   • Comprehensive coverage across all popularity levels
+   • Ready for family-friendly and content-aware recommendations!
+
+📁 Analysis summary saved to: parental_guide_analysis_summary_20250604_004952.txt
+
+✅ Analysis completed successfully!
+🚀 Your movie recommendation system is now enhanced with comprehensive parental guide data!
