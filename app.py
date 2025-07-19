@@ -490,27 +490,31 @@ def main():
                     # Optional review preview section
                     user_reviews = decode_json_reviews(movie.get('rt_user_reviews', ''))
                     critic_reviews = decode_json_reviews(movie.get('rt_critic_reviews', ''))
-                    
+
                     if user_reviews or critic_reviews:
                         total_reviews = len(user_reviews) + len(critic_reviews)
-                        with st.expander(f"📝 Sample Reviews ({total_reviews} available)", expanded=False):
+                        with st.expander(f"📝 All Reviews ({total_reviews} available)", expanded=False):
+                            
+                            # Display all user reviews without artificial limits
                             if user_reviews:
                                 st.write("**User Reviews:**")
-                                for review in user_reviews[:2]:
-                                    st.write(f"• {review}")
-                                if len(user_reviews) > 2:
-                                    st.write(f"*...and {len(user_reviews) - 2} more user reviews*")
+                                for i, review in enumerate(user_reviews, 1):
+                                    st.write(f"• **Review {i}:** {review}")
+                                    # Add some visual separation between longer reviews
+                                    if len(review) > 200:
+                                        st.write("")
                             
+                            # Add clear separation between review types
+                            if user_reviews and critic_reviews:
+                                st.markdown("---")
+                            
+                            # Display all critic reviews
                             if critic_reviews:
-                                if user_reviews:
-                                    st.write("")
                                 st.write("**Critic Reviews:**")
-                                for review in critic_reviews[:2]:
-                                    st.write(f"• {review}")
-                                if len(critic_reviews) > 2:
-                                    st.write(f"*...and {len(critic_reviews) - 2} more critic reviews*")
-                    
-                    st.divider()
+                                for i, review in enumerate(critic_reviews, 1):
+                                    st.write(f"• **Review {i}:** {review}")
+                                    if len(review) > 200:
+                                        st.write("")
             
             else:
                 # No results found - provide helpful suggestions
