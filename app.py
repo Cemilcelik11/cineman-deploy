@@ -187,7 +187,13 @@ def main():
     # Runtime filter for movie length preferences
     with st.sidebar.expander("Runtime Filter", expanded=False):
         min_runtime = int(df['runtime'].min())
-        max_runtime = int(df['runtime'].max())
+        # Set a reasonable maximum runtime cap instead of using dataset maximum
+        max_runtime_cap = 300  # 5 hours maximum
+        actual_max_runtime = int(df['runtime'].max())
+        
+        # Use the smaller of the two: either 300 minutes or the actual dataset maximum
+        max_runtime = min(max_runtime_cap, actual_max_runtime)
+        
         runtime_range = st.slider(
             "Select Runtime Range (minutes)",
             min_runtime, max_runtime,
