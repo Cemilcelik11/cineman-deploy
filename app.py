@@ -396,7 +396,25 @@ def main():
                         # Plot summary and narrative information
                         plot = movie.get('plot_summary', 'No plot summary available')
                         if pd.notna(plot) and str(plot).strip() and plot not in ['N/A', 'No Wikipedia page found for this movie']:
-                            st.write(f"**Plot:** {plot}")
+                            # Handle case where plot might be stored as dictionary string
+                            plot_text = str(plot)
+                            
+                            # Check if it's a dictionary-like string and extract the actual plot
+                            if plot_text.startswith('{') and plot_text.endswith('}'):
+                                try:
+                                    # Try to parse as JSON/dictionary and extract the plot text
+                                    import json
+                                    plot_dict = json.loads(plot_text.replace("'", '"'))  # Convert single quotes to double quotes
+                                    # Get the first value from the dictionary (assuming it's the plot text)
+                                    plot_text = list(plot_dict.values())[0] if plot_dict else plot_text
+                                except:
+                                    # If parsing fails, try to extract text between quotes manually
+                                    import re
+                                    match = re.search(r"'([^']*)'", plot_text)
+                                    if match:
+                                        plot_text = match.group(1)
+                            
+                            st.write(f"**Plot:** {plot_text}")
                         
                         # Director information
                         director = movie.get('directors', 'Unknown')
@@ -444,16 +462,18 @@ def main():
                             ('alcohol_drugs_severity', 'Substances'),
                             ('frightening_severity', 'Intense Scenes')
                         ]
-                        
+
                         for col, label in severity_columns:
                             if col in movie and pd.notna(movie[col]) and movie[col] > 0:
                                 severity_level = int(movie[col])
                                 severity_labels = {1: 'Mild', 2: 'Moderate', 3: 'Strong', 4: 'Intense', 5: 'Severe'}
                                 severity_text = severity_labels.get(severity_level, f'Level {severity_level}')
-                                content_ratings.append(f"{label}: {severity_text}")
-                        
+                                content_ratings.append(f"• {label}: {severity_text}")
+
                         if content_ratings:
-                            st.write(f"**Content:** {', '.join(content_ratings)}")
+                            st.write("**Content:**")
+                            for rating in content_ratings:
+                                st.write(rating)
                         else:
                             st.write("**Content:** Family Friendly")
                         
